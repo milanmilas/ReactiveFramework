@@ -8,16 +8,17 @@ namespace GettingStarted
     using System.Threading;
     using System.Threading.Tasks;
 
+    using GettingStarted.DEVHOL202;
     using GettingStarted._1_KeyTypes;
 
     class Program
     {
         static void Main(string[] args)
         {
-            Main1.Run();
+            Excercise3.Run();
 
             //AsyncCall();
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         static async void AsyncCall()

@@ -2,7 +2,7 @@
 
 namespace GettingStarted.DEVHOL202
 {
-    public static class Excercises1
+    public static class Excercise1
     {
         public static void Run()
         {
