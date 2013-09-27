@@ -15,7 +15,7 @@ namespace GettingStarted
     {
         static void Main(string[] args)
         {
-            Excercise3.Run();
+            Excercise4.Run();
 
             //AsyncCall();
             //Console.ReadLine();

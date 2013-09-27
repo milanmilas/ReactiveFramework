@@ -67,6 +67,7 @@
     <Compile Include="DEVHOL202\Excercise2.cs" />
     <Compile Include="DEVHOL202\Excercise1.cs" />
     <Compile Include="DEVHOL202\Excercise3.cs" />
+    <Compile Include="DEVHOL202\Excercise4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskExtensions.cs" />
