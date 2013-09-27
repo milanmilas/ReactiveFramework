@@ -1,5 +1,7 @@
 ﻿namespace GettingStarted.DEVHOL202
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Forms;
 
@@ -8,16 +10,25 @@
         public static void Run()
         {
             var lbl = new Label();
-            var form = new Form() { Controls = {lbl} };
+            var txt = new TextBox();
+
+            var form = new Form() { Controls = { txt} };
 
             //form.MouseMove += (sender, args) => { lbl.Text = args.Location.ToString(); };
             //Application.Run(form);
 
             var moves = Observable.FromEvent<MouseEventArgs>(form, "MouseMove");
+            var input = Observable.FromEvent<EventArgs>(txt, "TextChanged");
 
-            using (moves.Subscribe(evt => {
-                    lbl.Text = evt.EventArgs.Location.ToString();
-                }))
+            moves.Subscribe(
+                x => Console.WriteLine("User moved to location: {0}", x.EventArgs.Location.ToString()));
+
+            input.Subscribe(
+                x => Console.WriteLine("User entered input: {0}", ((TextBox)x.Sender).Text));
+
+            //using (moves.Subscribe(evt => {
+            //        lbl.Text = evt.EventArgs.Location.ToString();
+            //    }))
             {
                 Application.Run(form);
             }
