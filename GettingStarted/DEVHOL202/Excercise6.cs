@@ -12,11 +12,9 @@ namespace GettingStarted.DEVHOL202
         internal static void Run()
         {
             var txt = new TextBox();
+            var lbl = new Label() { Left = txt.Width + 20 };
 
-            var form = new Form() { Controls = { txt } };
-
-            var moves = from evt in Observable.FromEvent<MouseEventArgs>(form, "MouseMove")
-                        select evt.EventArgs.Location;
+            var form = new Form() { Controls = { txt, lbl } };
 
             var input = (from evt in Observable.FromEvent<EventArgs>(txt, "TextChanged")
                         select ((TextBox)evt.Sender).Text)
@@ -27,20 +25,9 @@ namespace GettingStarted.DEVHOL202
                         .RemoveTimestamp()
                         .DistinctUntilChanged();
 
-            var overFirstBisector = from mov in moves
-                                    where mov.X == mov.Y
-                                    select mov;
+            input.ObserveOn(lbl).Subscribe(x => lbl.Text = x);
 
-
-            overFirstBisector.Subscribe(
-                x => Console.WriteLine("Mouse at : {0}", x));
-
-            input.Subscribe(
-                x => Console.WriteLine("User wrote : {0}", x));
-
-            {
-                Application.Run(form);
-            }
+            Application.Run(form);
         }
     }
 }
