@@ -64,6 +64,8 @@
     <Compile Include="1 KeyTypes\Main1.cs" />
     <Compile Include="1 KeyTypes\MyConsoleObserver.cs" />
     <Compile Include="1 KeyTypes\MySequenceOfNumbers.cs" />
+    <Compile Include="DEVHOL202\Excercies6.cs" />
+    <Compile Include="DEVHOL202\Excercies5.cs" />
     <Compile Include="DEVHOL202\Excercise2.cs" />
     <Compile Include="DEVHOL202\Excercise1.cs" />
     <Compile Include="DEVHOL202\Excercise3.cs" />

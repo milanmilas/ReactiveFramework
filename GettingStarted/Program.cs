@@ -15,10 +15,7 @@ namespace GettingStarted
     {
         static void Main(string[] args)
         {
-            Excercise4.Run();
-
-            //AsyncCall();
-            //Console.ReadLine();
+            Excercise6.Run();
         }
 
         static async void AsyncCall()
@@ -30,7 +27,6 @@ namespace GettingStarted
         static async Task<int> Calculate()
         {
             return await Task.Factory.StartNew(() => 1);
-            //return await TaskEx.Run(() => 1);
         }
     }
 }

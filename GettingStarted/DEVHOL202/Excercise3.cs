@@ -17,8 +17,8 @@
             //form.MouseMove += (sender, args) => { lbl.Text = args.Location.ToString(); };
             //Application.Run(form);
 
-            var moves = Observable.FromEvent<MouseEventArgs>(form, "MouseMove");
-            var input = Observable.FromEvent<EventArgs>(txt, "TextChanged");
+            IObservable<IEvent<MouseEventArgs>> moves = Observable.FromEvent<MouseEventArgs>(form, "MouseMove");
+            IObservable<IEvent<EventArgs>> input = Observable.FromEvent<EventArgs>(txt, "TextChanged");
 
             moves.Subscribe(
                 x => Console.WriteLine("User moved to location: {0}", x.EventArgs.Location.ToString()));
